@@ -16,9 +16,10 @@
     </Page.Resources>-->
     
     <Grid Background="Transparent">
-        <MediaPlayerElement  Name="YoutubePlayer" MaxWidth="640" MaxHeight="360" AreTransportControlsEnabled="True">
+        <TextBlock Text="yo some text here that shouldnt show in compact overlay"/>
+        <MediaPlayerElement  Name="MyMediaPlayer" MaxWidth="640" MaxHeight="360" AreTransportControlsEnabled="True">
             <MediaPlayerElement.TransportControls>
-                <local:CustomMediaTransportControls x:Name="CustomMediaControl" IsSkipBackwardButtonVisible="True" IsSkipForwardButtonVisible="True" IsSkipBackwardEnabled="True" IsSkipForwardEnabled="True" IsFullWindowButtonVisible="True" IsFullWindowEnabled="True" QualityChanged="CustomMediaControl_QualityChangedAsync"/>
+                <local:CustomMediaTransportControls x:Name="CustomMediaControl" IsSkipBackwardButtonVisible="True" IsSkipForwardButtonVisible="True" IsSkipBackwardEnabled="True" IsSkipForwardEnabled="True" IsFullWindowButtonVisible="True" IsFullWindowEnabled="True"/>
             </MediaPlayerElement.TransportControls>
         </MediaPlayerElement>
         <Button Name="ClickMeButton" Content="Click Me" VerticalContentAlignment="Top" Click="ClickMeButton_Click"/>

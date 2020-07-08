@@ -38,43 +38,26 @@ namespace CustomMediaControl
 
             await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                YoutubePlayer?.MediaPlayer.Dispose();
+                MyMediaPlayer?.MediaPlayer.Dispose();
             });
-        }
-
-        public async Task setVideoSourceAsync(YouTubeQuality videoQuality)
-        {
-
-            try
-            {
-                var youtubeUrl = await YouTube.GetVideoUriAsync("QTYVJhy04rs", YouTubeQuality.Quality144P, videoQuality);
-                YoutubePlayer.Source = MediaSource.CreateFromUri(youtubeUrl.Uri);
-                YoutubePlayer.AutoPlay = true;
-            }
-            catch (Exception)
-            {
-                //await setVideoSourceAsync();
-            }
         }
 
         private async void Page_LoadedAsync(object sender, RoutedEventArgs e)
         {
             if (ApplicationView.GetForCurrentView().IsViewModeSupported(ApplicationViewMode.CompactOverlay))
+            {
                 CustomMediaControl.IsCompactOverlayButtonVisible = true;
+                CustomMediaControl.IsCompactOverlayEnabled = true;
+            }
             else
                 CustomMediaControl.IsCompactOverlayButtonVisible = false;
 
-            await setVideoSourceAsync(YouTubeQuality.Quality360P);
-        }
-
-        private async void CustomMediaControl_QualityChangedAsync(object sender, QualityChangedEventArgs e)
-        {
-            await setVideoSourceAsync(e.NewQuality);
+            this.MyMediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/fishes.wmv"));
         }
 
         private void ClickMeButton_Click(object sender, RoutedEventArgs e)
         {
-            CustomMediaControl.IsCompactOverlayButtonVisible = false;
+            //do nothing
         }
     }
 }

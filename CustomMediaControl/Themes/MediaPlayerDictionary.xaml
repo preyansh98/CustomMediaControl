@@ -774,24 +774,6 @@
                                                 </AppBarButton.Icon>
                                             </AppBarButton>
 
-                                            <AppBarButton x:Name='QualityButton'
-                                                Style='{StaticResource AppBarButtonStyle}'
-                                                MediaTransportControlsHelper.DropoutOrder='3'>
-                                                <AppBarButton.Flyout>
-                                                    <MenuFlyout>
-                                                        <MenuFlyoutItem x:Name="Quality144p" Text="144p"/>
-                                                        <MenuFlyoutItem x:Name="Quality240p" Text="240p"/>
-                                                        <MenuFlyoutItem x:Name="Quality360p" Text="360p"/>
-                                                        <MenuFlyoutItem x:Name="Quality480p" Text="480p"/>
-                                                        <MenuFlyoutItem x:Name="Quality720p" Text="720p"/>
-                                                        <MenuFlyoutItem x:Name="Quality1080p" Text="1080p"/>
-                                                    </MenuFlyout>
-                                                </AppBarButton.Flyout>
-                                                <AppBarButton.Icon>
-                                                    <SymbolIcon x:Name='QualitySymbol' Symbol='Setting' />
-                                                </AppBarButton.Icon>
-                                            </AppBarButton>
-
                                             <AppBarButton x:Name="CompactOverlayButton"
                                                 Style="{StaticResource AppBarButtonStyle}"
                                                 MediaTransportControlsHelper.DropoutOrder="17">
